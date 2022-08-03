@@ -1,4 +1,32 @@
+:root {
+  --gray: #E2D5C2;
+  --light-gray: #F1ECE5;
+  --white: #f4f4f4;
+  --black: #0E0E0E;
+  --main-text: #2E3847;
+}
+
 html, body {
-  background: brown;
-  color: white;
+  background: var(--gray);
+  color: var(--main-text);
+}
+
+#title {
+  text-align: center;
+}
+
+.section{
+  text-align: left;
+  margin: 0em 10em; /* T L R B*/
+}
+
+.code-syntax{
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--black);
+  margin-right: auto;
+  padding: 0.5em 0;
+  background-color: var(--light-gray);
+  border: 1px solid var(--black);
+  display: block;
+  padding: 20px;
 }
