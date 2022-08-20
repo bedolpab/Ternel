@@ -3,6 +3,7 @@
   --light-gray: #F1ECE5;
   --white: #f4f4f4;
   --black: #0E0E0E;
+  --blue: #3C6478;
   --main-text: #2E3847;
 }
 
@@ -20,6 +21,11 @@ html, body {
   margin: 0em 10em; /* T L R B*/
 }
 
+.section a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
 .code-syntax{
   font-family: 'Courier New', Courier, monospace;
   color: var(--black);
@@ -29,4 +35,16 @@ html, body {
   border: 1px solid var(--black);
   display: block;
   padding: 20px;
+}
+
+.footer {
+  text-align: center;
+  padding: 3px;
+  color: var(--black);
+  height: 50px;
+}
+
+.footer a{
+  color: var(--blue);
+  text-decoration: none;
 }
