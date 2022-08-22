@@ -2,80 +2,92 @@
 <html>
 
 <head>
-    <title>Linear Search</title>
+    <title>Sum of Two Values</title>
     <link rel="stylesheet" type="text/css" href="../main.css" media="screen" />
 </head>
 
 <body>
     <div class="section">
-        <h2>Linear Search</h2>
-        <p>We implement linear search by traversing through every <i>i</i> element in a given list. We are checking one
-            item
-            at a time in sequential order. We will apply linear search to the following elements using an array: </p>
-
+        <h2>Sum of Two Values</h2>
+        <p>Our approach to finding the sum of two values in a given list will consist of traversion through each element
+            in the list starting at index = 0. We will implement this algorithm using a <i>hash table</i>. We will
+            assume there can be repeated elements and non-positive integers. Assume we are given the following list of
+            elements:</p>
         <div class="code-syntax">
             <!--Code -->
             <p>
-                int[] array = {1, 2, 3, 4, 5, 6, 6, 6, 7, 11, 5, 1};
+                int[] array = {3, 4, 5, 4, 1, -2, 5};
             </p>
         </div>
 
+
         <h3>Results</h2>
-            <p>If an element is found, we will return <i>True</i>. If it is not found or the list is empty, we return
+            <p>If the sum of two elements in the list are equal to <i>value</i>, then we return <i>True</i>, else
                 <i>False</i>.
             </p>
 
             <h3>Search</h3>
-            <p>Let us create a method in which we will take in a list of elements and the element we are searching for:
+            <p>We will first create a <i>hash table</i>. This will allow us to stores keys (indicies) and values (value
+                of indicie). This will minimize our time complexity to O(n) at the expense of O(n) space.
             </p>
             <div class="code-syntax">
                 <!--Code -->
                 <p>
-                    static bool Search(int[] arr, int n){ <br>
-                    &nbsp; <br>
+                    Hashtable values = new Hashtable();
+                </p>
+            </div>
+
+            <p>
+                We will start with the first element and loop through <i>n-1</i>. We will then add to our hashtable
+                <i>i</i> being the index of the element, thus the key, and <i>array[i]</i> being the value of that
+                index.
+            </p>
+            <div class="code-syntax">
+                <!--Code -->
+                <p>
+                    for(int i = 0; i &lt; array.Length; i++){ <br>
+                    &nbsp; values.Add(i, array[i]);
                     }
                 </p>
             </div>
-            <p>We ill iterate through every element of <i>arr</i>. If <i>i</i> is that element, we return <i>True</i>
-                since it was found, else not:</p>
+            <p>To find the element whos sum with <i>n</i> is <i>value</i>, we will use <i>K - N</i>. For example: if we
+                pass in <i>K</i> = <i>13</i> and our current element is <i>N</i> = <i>6</i>, then the only element that
+                when added with <i>6</i> is <i>13</i> must be <i>K - N</i> or <i>13 - 6</i> = <i>7</i>. Therefore, if
+                our hashmap contains a value that is the difference of <i>K</i> and <i>N</i>, then &exist; two elements
+                whos sum is <i>value</i>.</p>
             <div class="code-syntax">
                 <!--Code -->
                 <p>
-                    for(int i = 0; i &lt; arr.Length; i++){ <br>
-                    &nbsp; if(arr[i] == n){ <br>
-                    &nbsp;&nbsp; return true; <br>
-                    &nbsp; } <br>
+                    if(values.ContainsValue(value - array[i])){<br>
+                    &nbsp; return true; <br>
                     } <br>
-                    return false;
                 </p>
             </div>
-            <p>Running the code: </p>
+            <p>Using our given list of numbers, the following would result:</p>
             <div class="code-syntax">
                 <!--Code -->
                 <p>
-                    Console.WriteLine(Search(arr, 5));
+                    Console.WriteLine(SumExists(array, 4));
                 </p>
             </div>
             <div class="code-syntax">
                 <!--Code -->
                 <p>
-                    <b>~Ternel/LinearSearch:~$</b> True
+                    <b>~Ternel/SumOfTwoValues:~$</b> True
                 </p>
             </div>
-            <br>
-
             <h3>Complexities</h3>
             <ul>
-                <li>Best Case: O(1), element is first in list</li>
-                <li>Worst case: O(n), element is at n-1, or n</li>
-                <li>Average case: O(n), element is at n</li>
-                <li>Space complexity: O(1)</li>
+                <li>Best Case: O(n)</li>
+                <li>Worst case: O(n), must our hashtable add and check every value</li>
+                <li>Average case: O(n), since our hash table only does O(1) lookup</li>
+                <li>Space complexity: O(n), since we are using a hash table at the exchange of space for speed</li>
             </ul>
             <h3>References</h3>
-            <p><b>Source Code: </b><a href="https://github.com/bedolpab/Ternel/tree/main/LinearSearch">Linear Search</a>
+            <p><b>Source Code: </b><a href="https://github.com/bedolpab/Ternel/tree/main/SumOfTwoValues">Sum of Two
+                    Values</a>
             </p>
-            <p><b>Definition: </b><a href="https://xlinux.nist.gov/dads/HTML/linearSearch.html">NIST Linear Search</a>
-            </p>
+        </div>
             <div class="section">
                 <a href="../index.html"> &gt; Return home</a>
             </div>
