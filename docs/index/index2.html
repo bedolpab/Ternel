@@ -2,36 +2,64 @@
 <html>
 
 <head>
-  <title> Ternel </title>
-  <link rel="stylesheet" type="text/css" href="/docs/main.css" media="screen" />
+  <title>Linear Search</title>
+  <link rel="stylesheet" type="text/css" href="../main.css" media="screen" />
 </head>
 
 <body>
   <div class="section">
-    <h2>Set Column Rows to Zero</h2>
-    <p>Set Column Rows to Zero explanation</p>
-    <div class="code-example">
-      <h3>Use</h3>
-      <div class="code-syntax">
-        <!--Code -->
-        <p>
-          int[] arr = {1, 2, 3, 4, 5}; <br>
-          Console.WriteLine(Search(arr, 3)); <br>
-        </p>
-      </div>
-      <p>Output may appear as so: </p>
-      <div class="code-syntax">
-        <!--Code -->
-        <p>
-          True
-        </p>
-      </div>
-    </div>
-    <p>This library is in its beginning development stages, so code examples may vary.</p>
-  </div>
+    <h2>Linear Search</h2>
+    <p>We implement linear search by traversing through every <i>i</i> element in a given list. We are checking one item
+      at a time in sequential order. We will apply linear search to the following elements using an array: </p>
 
-  <div class="section">
-    <a href="/docs/index.html""> < Return home</a>
+    <div class="code-syntax">
+      <!--Code -->
+      <p>
+        int[] array = {1, 2, 3, 4, 5, 6, 6, 6, 7, 11, 5, 1};
+      </p>
+    </div>
+
+    <h3>Results</h2>
+      <p>If an element is found, we will return <i>True</i>. If it is not found or the list is empty, we return
+        <i>False</i>.
+      </p>
+
+      <h3>Search</h3>
+      <p>Let us create a method in which we will take in a list of elements and the element we are searching for:</p>
+      <div class="code-syntax">
+        <!--Code -->
+        <p>
+          static bool Search(int[] arr, int n){ <br>
+          &nbsp; <br>
+          }
+        </p>
+      </div>
+      <p>We ill iterate through every element of <i>arr</i>. If <i>i</i> is that element, we return <i>True</i> since it was found, else not:</p>
+      <div class="code-syntax">
+        <!--Code -->
+        <p>
+          for(int i = 0; i &lt; arr.Length; i++){ <br>
+          &nbsp; if(arr[i] == n){ <br>
+            &nbsp;&nbsp; return true; <br>
+          &nbsp; } <br>
+          } <br>
+          return false;
+        </p>
+      </div>
+      <br>
+
+      <h3>Complexities</h3>
+      <ul>
+        <li>Best Case: O(1), element is first in list</li>
+        <li>Worst case: O(n), element is at n-1, or n</li>
+        <li>Average case: O(n), element is at n</li>
+        <li>Space complexity: O(1)</li>
+      </ul>
+      <h3>References</h3>
+      <p><b>Source Code: </b><a href="#">Linear Search</a></p>
+      <p><b>Definition: </b><a href="https://xlinux.nist.gov/dads/HTML/linearSearch.html">NIST Linear Search</a></p>
+      <div class="section">
+        <a href="/docs/index.html"> < Return home</a>
     </div>
   </body>
 </html>
