@@ -1,35 +1,203 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title> Ternel </title>
-    <link rel="stylesheet" type="text/css" href="/docs/main.css" media="screen"/>
-  </head>
-  <body>
-    <div class="section">
-      <h2>Sum of Two Values</h2>
-      <p>Sum of Two Values explanation</p>
-      <div class="code-example">
-        <h3>Use</h3>
-        <div class="code-syntax">
-          <!--Code -->
-          <p>
-            int[] arr = {1, 2, 3, 4, 5}; <br>
-            Console.WriteLine(Search(arr, 3)); <br>
-          </p>
-        </div>
-        <p>Output may appear as so: </p>
-        <div class="code-syntax">
-          <!--Code -->
-          <p>
-            True
-          </p>
-        </div>
-      </div>
-      <p>This library is in its beginning development stages, so code examples may vary.</p>
-    </div>
 
-    <div class="section">
-      <a href="/docs/index.html""> < Return home</a>
+<head>
+  <title> Ternel </title>
+  <link rel="stylesheet" type="text/css" href="/docs/main.css" media="screen" />
+</head>
+
+<body>
+  <div class="section">
+    <h2>(Binary) Heap Structure</h2>
+    <p>Heap is a tree based data structure. I will not go into details about what is it and assume you are already
+      familiar with it. We will be working with a binary heap. In this approach, we will create a min heap.</p>
+    <h3>Assumptions</h3>
+    <p>
+    <ul>
+      <li>We are working with an unsorted list</li>
+      <li>There are no repeating elements</li>
+    </ul>
+    </p>
+
+    <h3>Results</h3>
+    <p>We are not arriving at the heap sorting algorithm yet, so our results will vary from method to method. We will be
+      following a divide and conquer strategy, so each method will have a different result.</p>
+
+    <h3>Elements</h3>
+    <p>The following defines the set of elements we will work with. This is an unsorted list of elements without any
+      repeating.</p>
+    <div class="code-syntax">
+      <!--Code -->
+      <p> var list = new List<int>() { 9, 11, 18, 13, 15, 14, 8, 12, 10, 4, 6, 3, 7};</p>
     </div>
-  </body>
+    <p>Remeber to use <i>System.Collections.Generic</i> to work with lists.</p>
+
+    <h3>Importance</h3>
+    <p>To work with heaps, we must create a set of important methods first: </p>
+    <ol>
+      <li>Inserting</li>
+      <li>Deleting</li>
+      <li>Updating</li>
+      <li>Swaping</li>
+      <li>Sifting up</li>
+      <li>Sifting down</li>
+    </ol>
+
+    <h3>Inserting</h3>
+    <p>We insert an element at the end of the heap and then sift it up.</p>
+    <div class="code-syntax">
+      <!--Code -->
+      <p>
+        static void Insert(List &lt;int&gt; list, int i){ <br>
+        &nbsp; list.Add(i); <br>
+        &nbsp; SiftUp(list, list.Count - 1); <br>
+        }</p>
+    </div>
+    <p><b>Time Complexity</b>: O(log n)</p>
+
+    <h3>Deleting</h3>
+    <p>We delete the top most element - in a min heap, the top most element is the smallest element - by swaping it with
+      the last element. Once that has happened, we pop the last element (the smallest since it was swapped) and sift
+      down the top most element (which was originally last) to its appropriate position. We will return the element
+      popped for future use. </p>
+    <div class="code-syntax">
+      <!--Code -->
+      <p>
+        static int DeleteMin(List&lt;int&gt; list){<br>
+        &nbsp; if(list.Count == 0){ <br>
+        &nbsp; &nbsp; return -1; <br>
+        &nbsp; } <br>
+        &nbsp; int smallestElement = GetMin(list); <br>
+        &nbsp; Swap(list, 0, list.Count) - 1); <br>
+        &nbsp; list.RemoveAt(list.Count - 1); <br>
+        &nbsp; SiftDown(list, 0); <br>
+        &nbsp; return smallestElement; <br>
+        }</p>
+    </div>
+    <p><b>Time Complexity</b>: O(log n)</p>
+
+    <h3>Updating</h3>
+    <p>Updating an element in a min heap requires checking if the new element is less or greater than the previous one.
+      Based on the result, we sift down or up.</p>
+    <div class="code-syntax">
+      <!--Code -->
+      <p>
+        static void Update(List&lt;int&gt; list, int i, int newValue){ <br>
+        &nbsp; if(newValue &lt; list[i]){ <br>
+        &nbsp;&nbsp; list[i] = newValue; <br>
+        &nbsp;&nbsp; SiftUp(list, i); <br>
+        &nbsp; } <br>
+        &nbsp; if(newValue &gt; list[i]){ <br>
+        &nbsp;&nbsp; list[i] = newValue; <br>
+        &nbsp;&nbsp; SiftDown(list, i); <br>
+        &nbsp; } <br>
+        }</p>
+    </div>
+    <p><b>Time Complexity</b>: O(log n). Since it's only one iteration, it may appear O(1). However, since <i>sift</i>
+      is called, it makes it O(log n).</p>
+
+    <h3>Swaping</h3>
+    <p>We swap two elements. (A, B) => (B, A)</p>
+    <div class="code-syntax">
+      <!--Code -->
+      <p>
+        static void Swap(List&lt;int&gt; list, int i, int j){ <br>
+        &nbsp; var temp = list[i]; <br>
+        &nbsp; list[i] = list[j]; <br>
+        &nbsp; list[j]; = temp; <br>
+        }</p>
+    </div>
+    <p><b>Time Complexity</b>: O(1)</p>
+
+    <h3>Sifting Up</h3>
+    <p>We swap a node with its parent until it reaches the root or the heap property is satisfied. See <a
+        href="https://xlinux.nist.gov/dads/HTML/siftup.html">NIST</a> for more.</p>
+    <div class="code-syntax">
+      <!--Code -->
+      <p>
+        static void SiftUp(List&lt;int&gt; list, int i){ <br>
+        &nbsp; int parent = (i - 1) / 2;
+        &nbsp; while(i != 0 && list[i] &lt; list[parent]){ <br>
+        &nbsp;&nbsp; Swap(list, i, parent); <br>
+        &nbsp; i = parent; <br>
+        &nbsp; parent = (i - 1) / 2; <br>
+        &nbsp; } <br>
+        }</p>
+    </div>
+    <p><b>Time Complexity</b>: O(log n). The number of iterations depends on the height of the tree - which is log n.
+    </p>
+
+    <h3>Sifting Down</h3>
+    <p>We swap a node with its child until it reaches the last level of the tree or the heap property is satisfied. See
+      <a href="https://webdocs.cs.ualberta.ca/~holte/T26/heap-sift-down.html">UAlberta</a> for more.
+    </p>
+    <div class="code-syntax">
+      <!--Code -->
+      <p>
+        static void SiftDown(List&lt;int&gt; list, int i){ <br>
+        &nbsp; int L = 2 * i + 1; <br>
+        &nbsp; int R = 2 * i + 2; <br>
+
+        &nbsp; while(L &lt; list.Count && list[i] &gt; list[L] || R &lt; list.Count && list[i] &gt; list[R]){ <br>
+        &nbsp;&nbsp; if(list[R] &lt; list[L]){ <br>
+        &nbsp;&nbsp;&nbsp; Swap(list, i, R); <br>
+        &nbsp;&nbsp;&nbsp; i = R; <br> 
+        &nbsp;&nbsp; } <br>
+        &nbsp;&nbsp; else if (list[L] &lt; list[R]){ <br>
+        &nbsp;&nbsp;&nbsp; Swap(list, i, L); <br>
+        &nbsp;&nbsp;&nbsp; i = L; <br>
+        &nbsp;&nbsp; } <br>
+        &nbsp;&nbsp; L = 2 * i + 1; <br>
+        &nbsp;&nbsp; R = 2 * i + 2; <br>
+        &nbsp;&nbsp; } <br>
+        }
+      </p>
+    </div>
+    <p><b>Time Complexity</b>: O(log n).
+    </p>
+
+    <h2>Building a heap</h2>
+    <p>The previous methods are useful for splitting up tasks to build a heap. Now that we have defined that. We can
+      sucessfully create a heap (min-heap).
+      To do so, we will begin from the last element of the original list. We will compare it with its decendants until
+      the heap property is satisfied.</p>
+    <h3>Original Heap</h3>
+    <div class="code-syntax">
+      <!--Code -->
+      <!-- <p> var list = new List<int>() { 9, 11, 18, 13, 15, 14, 8, 12, 10, 4, 6, 3, 7};</p> -->
+      <p> 9-11-18-13-15-14-8-12-10-4-6-3-7</p>
+    </div>
+    <h3>Min Heap</h3>
+    <div class="code-syntax">
+      <!--Code -->
+      <!-- <p> var list = new List<int>() { 9, 11, 18, 13, 15, 14, 8, 12, 10, 4, 6, 3, 7};</p> -->
+      <p>3-4-7-10-6-9-8-12-13-15-11-14-18</p>
+    </div>
+    <p><b>Time Complexity: </b>O(n*logn)</p>
+    <p>Source code: <a href="#">CODE</a> <br>I will not type the code here as it is too long. You can view the source
+      code above.</p>
+
+    <h2>Heap Sort</h2>
+    <p>Once we have built a heap-buidling method, we can apply heap sort. To do this, we do the following:
+    <ol>
+      <li>Create a new list to store output</li>
+      <li>Build the heap</li>
+      <li>For every element in the original heap, we will delete the smallest element.</li>
+      <li>We store the delete element at <i>i</i> of our new list (we will use a loop) for <i>n</i> length.</li>
+    </ol>
+    </p>
+    <div class="code-syntax">
+      <!--Code -->
+      <!-- <p> var list = new List<int>() { 9, 11, 18, 13, 15, 14, 8, 12, 10, 4, 6, 3, 7};</p> -->
+      <p>3-4-6-7-8-9-10-11-12-13-14-15-18</p>
+    </div>
+    <p><b>Time Complexity: </b>O(n log n)</p>
+    <p><b>Space Complexity: </b>O(n)</p>
+    <br>
+    <div class="section">
+      <a href="/docs/index.html">
+        < Return home</a>
+    </div>
+</body>
+
 </html>
