@@ -1,0 +1,16 @@
+/Users/pablobedolla/CS/DSA/BinarySearch/bin/Debug/net5.0/BinarySearch
+/Users/pablobedolla/CS/DSA/BinarySearch/bin/Debug/net5.0/BinarySearch.deps.json
+/Users/pablobedolla/CS/DSA/BinarySearch/bin/Debug/net5.0/BinarySearch.runtimeconfig.json
+/Users/pablobedolla/CS/DSA/BinarySearch/bin/Debug/net5.0/BinarySearch.runtimeconfig.dev.json
+/Users/pablobedolla/CS/DSA/BinarySearch/bin/Debug/net5.0/BinarySearch.dll
+/Users/pablobedolla/CS/DSA/BinarySearch/bin/Debug/net5.0/ref/BinarySearch.dll
+/Users/pablobedolla/CS/DSA/BinarySearch/bin/Debug/net5.0/BinarySearch.pdb
+/Users/pablobedolla/CS/DSA/BinarySearch/obj/Debug/net5.0/BinarySearch.csproj.AssemblyReference.cache
+/Users/pablobedolla/CS/DSA/BinarySearch/obj/Debug/net5.0/BinarySearch.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pablobedolla/CS/DSA/BinarySearch/obj/Debug/net5.0/BinarySearch.AssemblyInfoInputs.cache
+/Users/pablobedolla/CS/DSA/BinarySearch/obj/Debug/net5.0/BinarySearch.AssemblyInfo.cs
+/Users/pablobedolla/CS/DSA/BinarySearch/obj/Debug/net5.0/BinarySearch.csproj.CoreCompileInputs.cache
+/Users/pablobedolla/CS/DSA/BinarySearch/obj/Debug/net5.0/BinarySearch.dll
+/Users/pablobedolla/CS/DSA/BinarySearch/obj/Debug/net5.0/ref/BinarySearch.dll
+/Users/pablobedolla/CS/DSA/BinarySearch/obj/Debug/net5.0/BinarySearch.pdb
+/Users/pablobedolla/CS/DSA/BinarySearch/obj/Debug/net5.0/BinarySearch.genruntimeconfig.cache
