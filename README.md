@@ -1,2 +1,2 @@
 # Ternel - Website Branch
-A collection library of functions aimed to simplify .NET C# development.
+Welcome to Ternel. This is a collection library of solutions and approaches to algorithmic and mathematical problems written strictly in C# or Pseudocode. This branch belongs to maintaining the gitpages for this repo. For an index of the library, please vistit [TERNEL](https://github.com/bedolpab/Ternel/tree/main)
