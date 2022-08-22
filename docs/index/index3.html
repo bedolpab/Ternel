@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Merge Sort</title>
+    <link rel="stylesheet" type="text/css" href="../main.css" media="screen" />
+</head>
+
+<body>
+    <div class="section">
+        <h2>Merge Sort</h2>
+        <p>We implement merge sort using recurssion. Using the left most element and right most element, we calculate
+            the midpoint until we get to one element. This steps back to two elements, thus comparing them and mergin
+            until all elements are merged. This occurs for both sides of the list. We perform merge sort on the
+            following list of elements</p>
+        <div class="code-syntax">
+            <!--Code -->
+            <p>
+                int[] array = {9, 3, 7, 5, 6, 4, 8, 2, 10, 12};
+            </p>
+        </div>
+
+        <h3>Results</h2>
+            <p>We do not return anything, rather, we perform merge sort in place.</p>
+
+            <h3>Merging</h3>
+            <p>Using the left most element, the middle, and the right most element, we split the passed array into two
+                arrays.</p>
+            <div class="code-syntax">
+                <!--Code -->
+                <p>
+                    static void Merge(int[] arr, int l, int m, int r){ <br>
+                    &nbsp; int[] L = new int [m]; <br>
+                    &nbsp; int[] R = new int[(r-m) + 1]; <br>
+                    }
+                </p>
+            </div>
+
+            <p>We then assign all repsecitve elements into each list</p>
+            <div class="code-syntax">
+                <!--Code -->
+                <p>
+                    int i = 0; <br>
+                    int j = 0; <br>
+                    int k = 0; <br> <br>
+                    for(i = 0; i &lt; m; i++){ <br>
+                    &nbsp; L[i] = arr[i]; <br>
+                    } <br>
+                    for(j = 0; j &lt; (r-m+1); j++){ <br>
+                    &nbsp; R[j] = arr[m+j]; <br>
+                    } <br>
+                    i = 0; <br>
+                    j = 0;
+                </p>
+            </div>
+            <p>We need to compare each element in each list to eachother. Therefore, we will iterate until both lists
+                are compared. Example: </p>
+            <div class="code-syntax">
+                <!--Code -->
+                <p>
+                    A = {2, 5, 6} <br>
+                    B = {3, 1} <br>
+                    C = {}
+                </p>
+            </div>
+            <p>Since i, j = 0, A[i] = 2 and B[i] = 3. 2 is less than 3, so we add 2 to set C and increment i. </p>
+            <div class="code-syntax">
+                <!--Code -->
+                <p>
+                    A = {2, 5, 6} <br>
+                    B = {3, 1} <br>
+                    C = {2}
+                </p>
+            </div>
+            <p>Again: 3 is less than 5, so we increment j and add 3 to set C.</p>
+            <div class="code-syntax">
+                <!--Code -->
+                <p>
+                    A = {2, 5, 6} <br>
+                    B = {3, 1} <br>
+                    C = {2, 3}
+                </p>
+            </div>
+            <p>1 is less than 5, so we add 1 to set C and increment j.</p>
+            <div class="code-syntax">
+                <!--Code -->
+                <p>
+                    A = {2, 5, 6} <br>
+                    B = {3, 1} <br>
+                    C = {2, 3}
+                </p>
+            </div>
+            <p>We have no more elements to compare with A, so we default and add the remaining elements.</p>
+            <div class="code-syntax">
+                <!--Code -->
+                <p>
+                    A = {2, 5, 6} <br>
+                    B = {3, 1} <br>
+                    C = {2, 3, 5, 6}
+                </p>
+            </div>
+            <p>Notice that 5 and 6 are in order. This is not always the case, but recurssion will help us fix that. Now
+                let's see the rest in code (merging only):</p>
+            <div class="code-syntax">
+                <!--Code -->
+                <p>
+                    while(i &lt; m && j &lt; (r-m+1)){ <br>
+                    &nbsp; if(L[i] &lt; R[j]){ <br>
+                    &nbsp;&nbsp; arr[k++] = L[i++]; <br>
+                    &nbsp; } <br>
+                    &nbsp; else{ <br>
+                    &nbsp;&nbsp; arr[k++] = R[j++]; <br>
+                    &nbsp; } <br>
+                    } <br>
+                    while(i &lt; L.length){ <br>
+                    &nbsp; arr[k++] = L[i++]; <br>
+                    } <br>
+                    while(j &lt; R.Length){ <br>
+                    &nbsp; arr[k++] = R[j++]; <br>
+                    }
+                </p>
+            </div>
+            <h3>Merge Sort</h3>
+            <p>Now that we are able to merge elements we can create merge sort. This is pretty straight forward. We simply continue to call the function itself until both halves are sorted. You can view the full source code in the repo linked below. Here is how the recursive process looks like: </p>
+            <div class="code-syntax">
+                <!--Code -->
+                <p>
+                   MergeSort(int[] arr, int l, int r){ <br>
+                    &nbsp; Calculate midpoint; <br>
+                    &nbsp; MergeSort(arr, l, mid); <br>
+                    &nbsp; MergeSort(arr, mid+1, r); <br>
+                    &nbsp; Merge(arr, l, mid, r); <br>
+                   }
+                </p>
+            </div>
+            <h3>Complexities</h3>
+            <ul>
+                <li>Best Case: O(n log n), since we are splitting the list into halves recursively</li>
+                <li>Worst case: O(n log n)</li>
+                <li>Average case: O(n log n)</li>
+                <li>Space complexity: O(n)</li>
+            </ul>
+            <h3>References</h3>
+            <p><b>Source Code: </b><a href="https://github.com/bedolpab/Ternel/tree/main/MergeSort">Linear Search</a>
+            </p>
+            <p><b>Definition: </b><a href="https://xlinux.nist.gov/dads/HTML/mergesort.html">NIST Merge Sort</a>
+            </p>
+            <br>
+            <div class="section">
+            <a href="../index.html">&gt; Return home</a>
+            </div>
+</body>
+
+</html>
