@@ -8,27 +8,136 @@
 
 <body>
   <div class="section">
-    <h2>Linear Search</h2>
-    <p>Linear search explanation</p>
-    <div class="code-example">
-      <h3>Use</h3>
-      <div class="code-syntax">
-        <!--Code -->
-        <p>
-          int[] arr = {1, 2, 3, 4, 5}; <br>
-          Console.WriteLine(Search(arr, 3)); <br>
-        </p>
-      </div>
-      <p>Output may appear as so: </p>
-      <div class="code-syntax">
-        <!--Code -->
-        <p>
-          True
-        </p>
-      </div>
+    <h2>Binary Search</h2>
+    <p>We implement a divide and conquer strategy for our binary search implementation. In order for binary search to be
+      sucessfull, our algorithm must be applied to a sorted list of elements. This is the list of elements we will apply
+      binary search on:</p>
+
+    <div class="code-syntax">
+      <!--Code -->
+      <p>
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20};
+      </p>
     </div>
-    <p>This library is in its beginning development stages, so code examples may vary.</p>
+
+    <h3>Results</h2>
+      <p>If an element is found, we will return that element e.g. <b>10</b>. If it is not found or the list is empty, we
+        will return <b>-1</b>.</p>
+
+      <h3>Strategy</h3>
+      <p>Since we are working with a divide an conquer algorithm, we must first define all bounds, i.e the <i>lowest
+          index</i>, <i>highest index</i>, and the <i>midpoint</i>. Using the array passed in, let us define these
+        elements:</p>
+      <div class="code-syntax">
+        <!--Code -->
+        <p>
+          int low = 0; <br>
+          int high = array.Length - 1; <br>
+          int midpoint = low + (high - low) / 2;
+        </p>
+      </div>
+
+      <p>We want to traverse the subarray for as long as our lowest index is less than the highest index, i.e. from
+        <i>left</i> to <i>right</i>. Every iteration, if the element has not been found we will keep recalculating the
+        midpoint spliting the array into smaller and smaller pieces until our element is found.
+      </p>
+
+      <div class="code-syntax">
+        <!--Code -->
+        <p>
+          while(low < high) <br>
+            {<br>
+            &nbsp; midpoint = low + (high - low) / 2;<br>
+            }
+        </p>
+      </div>
+
+      <h3>Conditions</h3>
+      <p>To minimize the time taken for the algorithm to run, we must remeber (assume iteration count = 1):
+      <ul>
+        <li>If the <i>key</i> = <i>low</i>, return <i>low</i>.</li>
+        <li>If the <i>key</i> = <i>high</i>, return <i>high</i>.</li>
+        <li>If the <i>key</i> = <i>midpoint</i>, return <i>midpoint</i>.</li>
+      </ul>
+      Let us define these statements:
+      </p>
+      <div class="code-syntax">
+        <!--Code -->
+        <p>
+          if(key == array[low]) <br>
+          {<br>
+          &nbsp;return low;<br>
+          } <br> <br>
+          if(key == array[high]) <br>
+          {<br>
+          &nbsp;return high;<br>
+          } <br> <br>
+          if(key == array[midpoint]) <br>
+          {<br>
+          &nbsp;return midpoint;<br>
+          } <br>
+        </p>
+      </div>
+      <p>NOTE: We return the index, not the element.</p>
+
+      <h3>Traversing Halves</h2>
+        <p>Now that we've defined statements for the best case scenario, let us define statements to traverse both
+          halves of the array.</p>
+        <p><b>If our key is less than the current midpoint element, it must be in the left half:</b></p>
+        <div class="code-syntax">
+          <!--Code -->
+          <p>
+            if (key < array[midpoint]) <br>
+              { <br>
+              &nbsp; high = midpoint - 1; <br>
+              } <br>
+          </p>
+        </div>
+        <p><b>If our key is greater than the current midpoint, it must be in the right half: </b></p>
+        <div class="code-syntax">
+          <!--Code -->
+          <p>
+            else <br>
+            { <br>
+            &nbsp; low = midpoint + 1; <br>
+            } <br>
+          </p>
+        </div>
+        <h3>Output</h3>
+        <p>If we wrap all the previous code in a method, we can call the method and store the index of the element we
+          are searching in a variable (This is defining the method, you can view the full source code here: Binary
+          Search) </p>
+        <div class="code-syntax">
+          <!--Code -->
+          <p>
+            static int BinarySearch(int[] array, int n, int key) <br>
+            { <br>
+            &nbsp; // n = length, key = element to find <br>
+            &nbsp; // Safety check <br> <br>
+            &nbsp; if (array == null | n == 0){ <br>
+            &nbsp;&nbsp; return -1; <br>
+            &nbsp;} <br>
+            }
+          </p>
+        </div>
+        <p>Now let us call the method: </p>
+        <div class="code-syntax">
+          <!--Code -->
+          <p>
+            Console.WriteLine(BinarySearch(array, array.Length, 4));
+          </p>
+        </div>
+        <div class="code-syntax">
+          <!--Code -->
+          <p>
+            <b>~Ternel/BinarySearch:~$</b> 3 
+          </p>
+        </div>
+  <p><b>Time Complexity: </b>O(log n)</p>
+  <p><b>Space Complexity: </b>O(1)</p>
   </div>
+
+  <br>
 
   <div class="section">
     <a href="/docs/index.html""> < Return home</a>

@@ -10,6 +10,7 @@
 html, body {
   background: var(--gray);
   color: var(--main-text);
+  font-size: large;
 }
 
 #title {
