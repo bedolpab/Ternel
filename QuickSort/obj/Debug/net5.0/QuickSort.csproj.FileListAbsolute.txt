@@ -1,0 +1,16 @@
+/Users/pablobedolla/CS/DSA/QuickSort/bin/Debug/net5.0/QuickSort
+/Users/pablobedolla/CS/DSA/QuickSort/bin/Debug/net5.0/QuickSort.deps.json
+/Users/pablobedolla/CS/DSA/QuickSort/bin/Debug/net5.0/QuickSort.runtimeconfig.json
+/Users/pablobedolla/CS/DSA/QuickSort/bin/Debug/net5.0/QuickSort.runtimeconfig.dev.json
+/Users/pablobedolla/CS/DSA/QuickSort/bin/Debug/net5.0/QuickSort.dll
+/Users/pablobedolla/CS/DSA/QuickSort/bin/Debug/net5.0/ref/QuickSort.dll
+/Users/pablobedolla/CS/DSA/QuickSort/bin/Debug/net5.0/QuickSort.pdb
+/Users/pablobedolla/CS/DSA/QuickSort/obj/Debug/net5.0/QuickSort.csproj.AssemblyReference.cache
+/Users/pablobedolla/CS/DSA/QuickSort/obj/Debug/net5.0/QuickSort.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pablobedolla/CS/DSA/QuickSort/obj/Debug/net5.0/QuickSort.AssemblyInfoInputs.cache
+/Users/pablobedolla/CS/DSA/QuickSort/obj/Debug/net5.0/QuickSort.AssemblyInfo.cs
+/Users/pablobedolla/CS/DSA/QuickSort/obj/Debug/net5.0/QuickSort.csproj.CoreCompileInputs.cache
+/Users/pablobedolla/CS/DSA/QuickSort/obj/Debug/net5.0/QuickSort.dll
+/Users/pablobedolla/CS/DSA/QuickSort/obj/Debug/net5.0/ref/QuickSort.dll
+/Users/pablobedolla/CS/DSA/QuickSort/obj/Debug/net5.0/QuickSort.pdb
+/Users/pablobedolla/CS/DSA/QuickSort/obj/Debug/net5.0/QuickSort.genruntimeconfig.cache
