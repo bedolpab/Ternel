@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quick Sort</title>
+    <link rel="stylesheet" type="text/css" href="../main.css" media="screen" />
+</head>
+
+<body>
+    <div class="section">
+        <h2>Quick Sort</h2>
+        <p>We implement quick sort by partitioning a given list into smaller partitions and sorting them recursively.
+            Assume we use the following list of items: </p>
+        <div class="code-syntax">
+            <!--Code -->
+            <p>
+                int[] array = {10, 5, 6, 200, 3, 7, 9, 10};
+            </p>
+        </div>
+
+        <h3>Results</h3>
+        <p>No element is returned. List is sorted in place.</p>
+
+        <h3>Swaping</h3>
+        <p>We swap two elements. (A, B) => (B, A)</p>
+        <div class="code-syntax">
+            <!--Code -->
+            <p>
+                static void Swap(List&lt;int&gt; list, int i, int j){ <br>
+                &nbsp; var temp = list[i]; <br>
+                &nbsp; list[i] = list[j]; <br>
+                &nbsp; list[j]; = temp; <br>
+                }</p>
+        </div>
+        <p><b>Time Complexity</b>: O(1)</p>
+
+        <h3>Partitioning</h3>
+        <p>In order to partition an array, we need two things: the lowest index and the highest index. We also need a
+            pivot and <i>K</i> element. <i>K</i> will be defined as the element that is in its proper place after all
+            sorting is done, which will become the pivot. </p>
+        <div class="code-syntax">
+            <!--Code -->
+            <p>
+                static int Partition(int[] arr, int l, int h){ <br>
+                &nbsp; int pivot = arr[h]; <br>
+                &nbsp; int k = l; <br>
+                }
+            </p>
+        </div>
+        <p>We will iterate while the <i>l</i> is less than the <i>h</i>. Since every swap we increment l, this helps us
+            keep track of where in the partition we are.</p>
+        <div class="code-syntax">
+            <!--Code -->
+            <p>
+                while(l &lt; h){ <br>
+                <br>
+                }
+            </p>
+        </div>
+        <p>Starting from the left most element, if arr[l] is less than or equal to the pivot, we swap it with k. We will
+            do this until all elements smaller than the pivot are to its left.</p>
+        <div class="code-syntax">
+            <!--Code -->
+            <p>
+                if(arr[l] &lt;= pivot){ <br>
+                &nbsp; Swap(arr, l, k); <br>
+                &nbsp; k++;
+                } <br>
+                l++;
+            </p>
+        </div>
+        <p>Once we go through the entire partitioning, k will hold the index for where the pivot must go, therefore we
+            swap it with the right most element in the list (since it is the index we choose for the pivot.</p>
+        <div class="code-syntax">
+            <!--Code -->
+            <p>
+                Swap(arr, k, h); <br>
+                return k;
+            </p>
+        </div>
+
+        <h3>Quick Sort</h3>
+        <p>Since we are now able to partition, we can implement quick sort. We will do this while <i>l</i> &lt;
+            <i>h</i>. Since we are using recursion, <i>l</i> and <i>h</i> are updated recursively when QuickSort is
+            called. Since our <i>Partition</i> function return the index of element in its proper place, we will use
+            that as our <i>l</i> for the right side of the list, and our <i>h</i> for the left side of the list.</p>
+        <div class="code-syntax">
+            <!--Code -->
+            <p>
+                static void QuickSort(int[] arr, int l, int h){ <br>
+                &nbsp; if(l &lt; h){ <br>
+                &nbsp;&nbsp; int index = Partition(arr, l, h); <br>
+                &nbsp;&nbsp; QuickSort(arr, l, index -1); <br>
+                &nbsp;&nbsp; QuickSort(arr, index + 1, h); <br>
+                &nbsp; } <br>
+                }
+            </p>
+        </div>
+
+        <h3>Complexities</h3>
+        <ul>
+            <li>Best Case: O(nlogn)</li>
+            <li>Worst case: O(n <sup>2</sup>), since there is a chance pivot is choosen at the worst position</li>
+            <li>Average case: O(nlogn)</li>
+            <li>Space complexity: O(n)</li>
+        </ul>
+        <h3>References</h3>
+        <p><b>Source Code: </b><a href="https://github.com/bedolpab/Ternel/tree/main/QuickSort">Quick Sort</a>
+        </p>
+        <p><b>Definition: </b><a href="https://xlinux.nist.gov/dads/HTML/quicksort.html">NIST Quick Sort</a>
+        </p>
+        <div class="section">
+            <a href="../index.html"> &gt; Return home</a>
+        </div>
+</body>
+
+</html>
