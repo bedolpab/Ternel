@@ -1,0 +1,16 @@
+/Users/pablobedolla/CS/DSA/Heap/bin/Debug/net5.0/Heap.deps.json
+/Users/pablobedolla/CS/DSA/Heap/bin/Debug/net5.0/Heap.runtimeconfig.json
+/Users/pablobedolla/CS/DSA/Heap/bin/Debug/net5.0/Heap.runtimeconfig.dev.json
+/Users/pablobedolla/CS/DSA/Heap/bin/Debug/net5.0/Heap.dll
+/Users/pablobedolla/CS/DSA/Heap/bin/Debug/net5.0/ref/Heap.dll
+/Users/pablobedolla/CS/DSA/Heap/bin/Debug/net5.0/Heap.pdb
+/Users/pablobedolla/CS/DSA/Heap/obj/Debug/net5.0/Heap.csproj.AssemblyReference.cache
+/Users/pablobedolla/CS/DSA/Heap/obj/Debug/net5.0/Heap.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pablobedolla/CS/DSA/Heap/obj/Debug/net5.0/Heap.AssemblyInfoInputs.cache
+/Users/pablobedolla/CS/DSA/Heap/obj/Debug/net5.0/Heap.AssemblyInfo.cs
+/Users/pablobedolla/CS/DSA/Heap/obj/Debug/net5.0/Heap.csproj.CoreCompileInputs.cache
+/Users/pablobedolla/CS/DSA/Heap/obj/Debug/net5.0/Heap.dll
+/Users/pablobedolla/CS/DSA/Heap/obj/Debug/net5.0/ref/Heap.dll
+/Users/pablobedolla/CS/DSA/Heap/obj/Debug/net5.0/Heap.pdb
+/Users/pablobedolla/CS/DSA/Heap/obj/Debug/net5.0/Heap.genruntimeconfig.cache
+/Users/pablobedolla/CS/DSA/Heap/bin/Debug/net5.0/Heap
