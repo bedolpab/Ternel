@@ -9,9 +9,8 @@
 <body>
   <div class="section">
     <h2>Binary Search</h2>
-    <p>We implement a divide and conquer strategy for our binary search implementation. In order for binary search to be
-      sucessfull, our algorithm must be applied to a sorted list of elements. This is the list of elements we will apply
-      binary search on:</p>
+    <p>We implement a divide and conquer strategy for our binary search implementation. For binary search to be successful, our
+    algorithm must be applied to a sorted list of elements. This is the list of elements we will apply binary search on:</p>
 
     <div class="code-syntax">
       <!--Code -->
@@ -25,7 +24,7 @@
         will return <b>-1</b>.</p>
 
       <h3>Strategy</h3>
-      <p>Since we are working with a divide an conquer algorithm, we must first define all bounds, i.e the <i>lowest
+      <p>Since we are working with a divide and conquer algorithm, we must first define all bounds, i.e the <i>lowest
           index</i>, <i>highest index</i>, and the <i>midpoint</i>. Using the array passed in, let us define these
         elements:</p>
       <div class="code-syntax">
@@ -37,15 +36,15 @@
         </p>
       </div>
 
-      <p>We want to traverse the subarray for as long as our lowest index is less than the highest index, i.e. from
+      <p>We want to traverse the subarray while our lowest index is less than the highest index, i.e. from
         <i>left</i> to <i>right</i>. Every iteration, if the element has not been found we will keep recalculating the
-        midpoint spliting the array into smaller and smaller pieces until our element is found.
+        midpoint spliting the array into smaller and smaller pieces until our element has been found.
       </p>
 
       <div class="code-syntax">
         <!--Code -->
         <p>
-          while(low < high) <br>
+          while(low &lt; high) <br>
             {<br>
             &nbsp; midpoint = low + (high - low) / 2;<br>
             }
@@ -53,7 +52,7 @@
       </div>
 
       <h3>Conditions</h3>
-      <p>To minimize the time taken for the algorithm to run, we must remeber (assume iteration count = 1):
+      <p>To minimize the time taken for the algorithm to run, we must remember (assume iteration count = 1):
       <ul>
         <li>If the <i>key</i> = <i>low</i>, return <i>low</i>.</li>
         <li>If the <i>key</i> = <i>high</i>, return <i>high</i>.</li>
@@ -66,15 +65,15 @@
         <p>
           if(key == array[low]) <br>
           {<br>
-          &nbsp;return low;<br>
+          &nbsp; return low;<br>
           } <br> <br>
           if(key == array[high]) <br>
           {<br>
-          &nbsp;return high;<br>
+          &nbsp; return high;<br>
           } <br> <br>
           if(key == array[midpoint]) <br>
           {<br>
-          &nbsp;return midpoint;<br>
+          &nbsp; return midpoint;<br>
           } <br>
         </p>
       </div>
@@ -87,7 +86,7 @@
         <div class="code-syntax">
           <!--Code -->
           <p>
-            if (key < array[midpoint]) <br>
+            if (key &lt; array[midpoint]) <br>
               { <br>
               &nbsp; high = midpoint - 1; <br>
               } <br>
@@ -105,7 +104,8 @@
         </div>
         <h3>Output</h3>
         <p>If we wrap all the previous code in a method, we can call the method and store the index of the element we
-          are searching in a variable (This is defining the method, you can view the full source code here: <a href="https://github.com/bedolpab/Ternel/tree/main/BinarySearch">Binary Search</a> </p>
+          are searching in a variable (this is defining the method, you can view the full source code here: <a
+            href="https://github.com/bedolpab/Ternel/tree/main/BinarySearch">Binary Search</a> </p>
         <div class="code-syntax">
           <!--Code -->
           <p>
@@ -129,17 +129,18 @@
         <div class="code-syntax">
           <!--Code -->
           <p>
-            <b>~Ternel/BinarySearch:~$</b> 3 
+            <b>~Ternel/BinarySearch:~$</b> 3
           </p>
         </div>
-  <p><b>Time Complexity: </b>O(log n)</p>
-  <p><b>Space Complexity: </b>O(1)</p>
+        <p><b>Time Complexity: </b>O(log n)</p>
+        <p><b>Space Complexity: </b>O(1)</p>
   </div>
 
   <br>
 
   <div class="section">
-    <a href="../index.html"> &gt; Return home</a>
-    </div>
-  </body>
+    <a class="return" href="../index.html"> &lt; Return home</a>
+  </div>
+</body>
+
 </html>

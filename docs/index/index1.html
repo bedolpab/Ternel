@@ -20,12 +20,11 @@
     </p>
 
     <h3>Results</h3>
-    <p>We are not arriving at the heap sorting algorithm yet, so our results will vary from method to method. We will be
-      following a divide and conquer strategy, so each method will have a different result.</p>
+    <p>We are not creating the heap sorting algorithm just yet. Instead, we will be following a divide and conquer strategy so that the entire problem is split into smaller tasks.</p>
 
     <h3>Elements</h3>
     <p>The following defines the set of elements we will work with. This is an unsorted list of elements without any
-      repeating.</p>
+      repeats.</p>
     <div class="code-syntax">
       <!--Code -->
       <p> var list = new List<int>() { 9, 11, 18, 13, 15, 14, 8, 12, 10, 4, 6, 3, 7};</p>
@@ -93,8 +92,8 @@
         &nbsp; } <br>
         }</p>
     </div>
-    <p><b>Time Complexity</b>: O(log n). Since it's only one iteration, it may appear O(1). However, since <i>sift</i>
-      is called, it makes it O(log n).</p>
+    <p><b>Time Complexity</b>: O(log n). Since it's only one iteration, it may appear as O(1). However, since <i>sift</i>
+      is called, this makes it O(log n).</p>
 
     <h3>Swaping</h3>
     <p>We swap two elements. (A, B) => (B, A)</p>
@@ -124,11 +123,11 @@
         &nbsp; } <br>
         }</p>
     </div>
-    <p><b>Time Complexity</b>: O(log n). The number of iterations depends on the height of the tree - which is log n.
+    <p><b>Time Complexity</b>: O(log n). The number of iterations depends on the height of the tree - which is <i>log n</i>.
     </p>
 
     <h3>Sifting Down</h3>
-    <p>We swap a node with its child until it reaches the last level of the tree or the heap property is satisfied. See
+    <p>We swap a node with its child until it reaches the leaf or the heap property is satisfied. See
       <a href="https://webdocs.cs.ualberta.ca/~holte/T26/heap-sift-down.html">UAlberta</a> for more.
     </p>
     <div class="code-syntax">
@@ -173,9 +172,8 @@
       <!-- <p> var list = new List<int>() { 9, 11, 18, 13, 15, 14, 8, 12, 10, 4, 6, 3, 7};</p> -->
       <p>3-4-7-10-6-9-8-12-13-15-11-14-18</p>
     </div>
-    <p><b>Time Complexity: </b>O(n*logn)</p>
-    <p>Source code: <a href="https://github.com/bedolpab/Ternel/tree/main/Heap">Heap</a> <br>I will not type the code here as it is too long. You can view the source
-      code above.</p>
+    <p><b>Time Complexity: </b>O(nlogn)</p>
+    <p>Source code: <a href="https://github.com/bedolpab/Ternel/tree/main/Heap">Heap</a> <br>The link above will take you to the source code where you can observe how we build the heap using the methods we have created.</p>
 
     <h2>Heap Sort</h2>
     <p>Once we have built a heap-buidling method, we can apply heap sort. To do this, we do the following:
@@ -186,6 +184,7 @@
       <li>We store the delete element at <i>i</i> of our new list (we will use a loop) for <i>n</i> length.</li>
     </ol>
     </p>
+    <p>Output should look as the following once all elements are sorted:</p>
     <div class="code-syntax">
       <!--Code -->
       <!-- <p> var list = new List<int>() { 9, 11, 18, 13, 15, 14, 8, 12, 10, 4, 6, 3, 7};</p> -->
@@ -196,7 +195,7 @@
     <br>
     </div>
     <div class="section">
-      <a href="../index.html">&gt; Return home</a>
+      <a class="return" href="../index.html">&lt; Return home</a>
     </div>
 </body>
 

@@ -9,9 +9,9 @@
 <body>
     <div class="section">
         <h2>Sum of Two Values</h2>
-        <p>Our approach to finding the sum of two values in a given list will consist of traversion through each element
+        <p>Our approach to finding the sum of two values in a given list will consist of traversing through each element
             in the list starting at index = 0. We will implement this algorithm using a <i>hash table</i>. We will
-            assume there can be repeated elements and non-positive integers. Assume we are given the following list of
+            assume there can be repeated elements and contains either &Zopf;<sup>+</sup> and or &Zopf;<sup>-</sup>. Assume we are given the following list of
             elements:</p>
         <div class="code-syntax">
             <!--Code -->
@@ -28,7 +28,7 @@
 
             <h3>Search</h3>
             <p>We will first create a <i>hash table</i>. This will allow us to stores keys (indicies) and values (value
-                of indicie). This will minimize our time complexity to O(n) at the expense of O(n) space.
+                of indicies). This will minimize our time complexity to O(n) at the expense of O(n) space.
             </p>
             <div class="code-syntax">
                 <!--Code -->
@@ -39,8 +39,7 @@
 
             <p>
                 We will start with the first element and loop through <i>n-1</i>. We will then add to our hashtable
-                <i>i</i> being the index of the element, thus the key, and <i>array[i]</i> being the value of that
-                index.
+                <i>i</i> being the index of the current element in the loop, i.e. the key, and <i>array[i]</i> being the value of that index.
             </p>
             <div class="code-syntax">
                 <!--Code -->
@@ -50,11 +49,10 @@
                     }
                 </p>
             </div>
-            <p>To find the element whos sum with <i>n</i> is <i>value</i>, we will use <i>K - N</i>. For example: if we
+            <p>To find the element whos sum with <i>N</i> is the <i>value</i> passed in, we will use <i>K - N</i>. For example: if we
                 pass in <i>K</i> = <i>13</i> and our current element is <i>N</i> = <i>6</i>, then the only element that
                 when added with <i>6</i> is <i>13</i> must be <i>K - N</i> or <i>13 - 6</i> = <i>7</i>. Therefore, if
-                our hashmap contains a value that is the difference of <i>K</i> and <i>N</i>, then &exist; two elements
-                whos sum is <i>value</i>.</p>
+                our hashmap contains a value that is the difference of <i>K</i> and <i>N</i>, then &exist;<i>n<sub>1</sub> </i> &isin; <i>array</i> whos sum with &exist;<i>n<sub>2</sub></i> &isin; <i>array</i> is the value paased in.</p>
             <div class="code-syntax">
                 <!--Code -->
                 <p>
@@ -89,7 +87,7 @@
             </p>
         </div>
             <div class="section">
-                <a href="../index.html"> &gt; Return home</a>
+                <a class="return" href="../index.html"> &gt; Return home</a>
             </div>
 </body>
 

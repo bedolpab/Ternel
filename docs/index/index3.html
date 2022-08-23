@@ -10,9 +10,7 @@
     <div class="section">
         <h2>Merge Sort</h2>
         <p>We implement merge sort using recurssion. Using the left most element and right most element, we calculate
-            the midpoint until we get to one element. This steps back to two elements, thus comparing them and mergin
-            until all elements are merged. This occurs for both sides of the list. We perform merge sort on the
-            following list of elements</p>
+            the midpoint until we can no longer keep going. We perform merge sort on the following list of elements</p>
         <div class="code-syntax">
             <!--Code -->
             <p>
@@ -63,7 +61,7 @@
                     C = {}
                 </p>
             </div>
-            <p>Since i, j = 0, A[i] = 2 and B[i] = 3. 2 is less than 3, so we add 2 to set C and increment i. </p>
+            <p>Since i, j = 0, A[i] = 2 and B[i] = 3. 2 &lt; 3, so we add 2 to set C and increment i. </p>
             <div class="code-syntax">
                 <!--Code -->
                 <p>
@@ -72,7 +70,7 @@
                     C = {2}
                 </p>
             </div>
-            <p>Again: 3 is less than 5, so we increment j and add 3 to set C.</p>
+            <p>Again: 3 &lt; 5, so we increment j and add 3 to set C.</p>
             <div class="code-syntax">
                 <!--Code -->
                 <p>
@@ -81,7 +79,7 @@
                     C = {2, 3}
                 </p>
             </div>
-            <p>1 is less than 5, so we add 1 to set C and increment j.</p>
+            <p>1 &lt; 5, so we add 1 to set C and increment j.</p>
             <div class="code-syntax">
                 <!--Code -->
                 <p>
@@ -121,7 +119,7 @@
                 </p>
             </div>
             <h3>Merge Sort</h3>
-            <p>Now that we are able to merge elements we can create merge sort. This is pretty straight forward. We simply continue to call the function itself until both halves are sorted. You can view the full source code in the repo linked below. Here is how the recursive process looks like: </p>
+            <p>Now that we are able to merge elements we can create merge sort. This is pretty straight forward. We simply continue to call the function itself until both halves are sorted. You can view the full source code in the repo linked below. Here is how the recursive process looks like (pseudo): </p>
             <div class="code-syntax">
                 <!--Code -->
                 <p>
@@ -148,7 +146,7 @@
             <br>
         </div>
             <div class="section">
-            <a href="../index.html">&gt; Return home</a>
+            <a class="return" href="../index.html">&lt; Return home</a>
             </div>
 </body>
 
