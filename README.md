@@ -1,5 +1,5 @@
 # Ternel - Home
-Welcome to Ternel. This is a collection library of solutions and approaches to algorithmic and mathematical problems written strictly in C# or Pseudocode. This branch holds the index for the entire library. You can view all files for solution/approaches above. You contribution is welcomed. Our aim is to grow this repository into one of the largest on github. 
+Welcome to Ternel. This is a collection library of solutions and approaches to algorithmic and mathematical problems written in C# and Java. This branch holds the index for the entire library. You can view all files for solution/approaches above. You contribution is welcomed. Our aim is to grow this repository into one of the largest on github. 
 <p align="center">
         <a href="https://github.com/bedolpab/Ternel/blob/main/LICENSE" alt="License">
           <img src="https://img.shields.io/github/license/bedolpab/Ternel?style=plastic"/>
