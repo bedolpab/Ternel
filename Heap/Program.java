@@ -1,6 +1,6 @@
 
 /*
- * Binary Search implemented in java
+ * Heap sort implemented in java
  */
 
 import java.util.ArrayList;
